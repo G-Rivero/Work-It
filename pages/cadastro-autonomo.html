@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se no Work It!</title>
+</head>
+<body>
+    
+    <div class="boasVindas">
+        <h1>Bem Vindo ao Work It!</h1>
+        <h5>Crie sua conta como autônomo já</h5>
+        <div class="linkLogin">
+            <p>Já tem uma conta? <a href="pages/login.html">Faça login aqui</a></p>
+        </div>
+    </div>
+    
+    <div class="cadastro">
+        <form class="formularioCadastro" action="pages/login.html" method="post">
+            <input
+                type="text"
+                class="inputNome"
+                name="nome"
+                placeholder="Nome Completo"
+                required
+            />
+            
+            <div class="linha">
+                <label for="data">Data de Nascimento</label>
+                <input
+                    type="date"
+                    class="inputNasc"
+                    name="data"
+                    required
+                />
+                <input
+                    type="email"
+                    class="inputEmail"
+                    name="email"
+                    placeholder="Email"
+                    required
+                />
+            </div>
+            <input
+                type="password"
+                class="inputSenha"
+                name="senha"
+                placeholder="Crie uma Senha"
+                required
+            />
+            <input
+                type="password"
+                class="inputSenha"
+                name="confirmeSenha"
+                placeholder="Confirme sua Senha"
+                required
+            />
+            <button type="submit" class="btnCadastrar">
+                Criar Conta
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

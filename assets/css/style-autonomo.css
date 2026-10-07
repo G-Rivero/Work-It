@@ -1,0 +1,841 @@
+/* ============================================================
+   1. CORES DO PROJETO
+   ============================================================ */
+
+:root {
+    --fundo-pagina: #eef0ff;
+
+    --roxo-claro: #b6a3db;
+    --roxo-medio: #9f84d8;
+    --roxo-principal: #8267bc;
+    --roxo-escuro: #69519f;
+
+    --texto-principal: #3d374b;
+    --branco: #ffffff;
+
+    --borda-suave: rgba(108, 82, 157, 0.18);
+
+    --sombra:
+        0 8px 25px rgba(78, 60, 115, 0.16);
+}
+
+
+/* ============================================================
+   2. RESET
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        var(--fundo-pagina);
+
+    color:
+        var(--texto-principal);
+
+    overflow:
+        hidden;
+}
+
+
+/* ============================================================
+   3. APLICAÇÃO
+   ============================================================ */
+
+.app {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        var(--fundo-pagina);
+}
+
+
+/* ============================================================
+   4. CABEÇALHO
+   ============================================================ */
+
+.topo {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        0 24px;
+
+    flex-shrink: 0;
+}
+
+
+.topo h1 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color:
+        var(--texto-principal);
+}
+
+
+/* ============================================================
+   5. ÁREA PRINCIPAL
+   ============================================================ */
+
+.map-container {
+    position: relative;
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding:
+        0
+        70px
+        18px
+        20px;
+}
+
+
+/* ============================================================
+   6. MAPA
+   ============================================================ */
+
+#map {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        var(--sombra);
+
+    background:
+        #dde1f3;
+}
+
+
+/* ============================================================
+   7. CONTROLES SUPERIORES
+   ============================================================ */
+
+.controles-mapa {
+    position: absolute;
+
+    top: 18px;
+    left: 38px;
+
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    width:
+        min(
+            620px,
+            calc(100% - 150px)
+        );
+}
+
+
+/* ============================================================
+   8. PESQUISA
+   ============================================================ */
+
+.barra-pesquisa {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background:
+        var(--roxo-claro);
+
+    box-shadow:
+        0 5px 16px rgba(79, 62, 115, 0.18);
+}
+
+
+.icone-pesquisa {
+    margin-left: 17px;
+
+    color:
+        var(--branco);
+
+    font-size: 14px;
+}
+
+
+#pesquisaInput {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    padding:
+        0 15px;
+
+    background:
+        transparent;
+
+    color:
+        var(--branco);
+
+    font-size: 14px;
+}
+
+
+#pesquisaInput::placeholder {
+    color:
+        rgba(255, 255, 255, 0.88);
+}
+
+
+/* ============================================================
+   9. BOTÃO DE PESQUISA
+   ============================================================ */
+
+#btnPesquisaLocal {
+    height: 100%;
+
+    border: none;
+
+    padding:
+        0 24px;
+
+    background:
+        var(--roxo-principal);
+
+    color:
+        var(--branco);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+#btnPesquisaLocal:hover {
+    background:
+        var(--roxo-escuro);
+}
+
+
+#btnPesquisaLocal:active {
+    transform:
+        scale(0.96);
+}
+
+
+.icone-buscar {
+    display: none;
+}
+
+
+/* ============================================================
+   10. ÁREA DOS SELECTS
+   ============================================================ */
+
+.seletores-regiao {
+    display: flex;
+
+    gap: 8px;
+
+    width: 100%;
+}
+
+
+/* ============================================================
+   11. CONTAINER DOS SELECTS
+   ============================================================ */
+
+.campo-regiao {
+    position: relative;
+
+    flex: 1;
+
+    height: 42px;
+
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 22px;
+
+    background:
+        var(--roxo-claro);
+
+    box-shadow:
+        0 4px 14px rgba(79, 62, 115, 0.16);
+
+    overflow: hidden;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.campo-regiao:hover {
+    background:
+        var(--roxo-medio);
+}
+
+
+.campo-regiao:focus-within {
+    background:
+        var(--roxo-principal);
+
+    box-shadow:
+        0 0 0 3px rgba(182, 163, 219, 0.4);
+}
+
+
+/* ============================================================
+   12. ÍCONES DOS SELECTS
+   ============================================================ */
+
+.campo-regiao > i {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        var(--branco);
+
+    font-size: 14px;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* ============================================================
+   13. SELECTS
+   ============================================================ */
+
+#selectEstado,
+#selectCidade {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    padding:
+        0
+        42px
+        0
+        42px;
+
+    background:
+        transparent;
+
+    color:
+        var(--branco);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+/* ============================================================
+   14. SETA DOS SELECTS
+   ============================================================ */
+
+.campo-regiao::after {
+    content: "";
+
+    position: absolute;
+
+    right: 15px;
+    top: 50%;
+
+    transform:
+        translateY(-25%);
+
+    border-left:
+        5px solid transparent;
+
+    border-right:
+        5px solid transparent;
+
+    border-top:
+        6px solid var(--branco);
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   15. OPÇÕES DOS SELECTS
+   ============================================================ */
+
+#selectEstado option,
+#selectCidade option {
+    background:
+        var(--branco);
+
+    color:
+        var(--texto-principal);
+}
+
+
+/* ============================================================
+   16. MENU LATERAL
+   ============================================================ */
+
+.menu-lateral {
+    position: absolute;
+
+    top: 50%;
+    right: 10px;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 1100;
+
+    width: 52px;
+
+    padding:
+        6px 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border-radius: 28px;
+
+    background:
+        var(--roxo-medio);
+
+    box-shadow:
+        var(--sombra);
+}
+
+
+/* ============================================================
+   17. BOTÕES DO MENU
+   ============================================================ */
+
+.menu-botao {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        transparent;
+
+    color:
+        var(--branco);
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+.menu-botao:hover,
+.menu-botao.ativo {
+    background:
+        rgba(255, 255, 255, 0.18);
+}
+
+
+.menu-botao:active {
+    transform:
+        scale(0.9);
+}
+
+
+/* ============================================================
+   18. ZOOM DO LEAFLET
+   ============================================================ */
+
+.leaflet-control-zoom {
+    border:
+        none !important;
+
+    border-radius:
+        14px !important;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 5px 16px rgba(79, 62, 115, 0.20) !important;
+}
+
+
+.leaflet-control-zoom a {
+    background:
+        rgba(255, 255, 255, 0.94) !important;
+
+    color:
+        var(--roxo-principal) !important;
+
+    border:
+        none !important;
+}
+
+
+/* ============================================================
+   19. POPUP
+   ============================================================ */
+
+.leaflet-popup-content-wrapper {
+    border-radius:
+        18px;
+
+    box-shadow:
+        0 8px 25px rgba(60, 45, 92, 0.20);
+}
+
+
+.leaflet-popup-content {
+    min-width:
+        200px;
+
+    margin:
+        16px 18px;
+
+    color:
+        var(--texto-principal);
+}
+
+
+.popup-servico h3,
+.popup-profissional h3 {
+    margin:
+        0
+        0
+        9px;
+
+    font-size:
+        17px;
+
+    font-weight:
+        600;
+
+    color:
+        var(--roxo-principal);
+}
+
+
+.popup-servico p,
+.popup-profissional p {
+    margin:
+        6px 0;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.45;
+}
+
+
+.categoria-servico {
+    color:
+        var(--roxo-escuro);
+}
+
+
+/* ============================================================
+   20. TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .topo {
+        height:
+            58px;
+    }
+
+
+    .topo h1 {
+        font-size:
+            23px;
+    }
+
+
+    .map-container {
+        padding:
+            0
+            65px
+            12px
+            12px;
+    }
+
+
+    .controles-mapa {
+        top:
+            15px;
+
+        left:
+            26px;
+
+        width:
+            calc(100% - 105px);
+    }
+
+
+    .menu-lateral {
+        right:
+            7px;
+    }
+
+}
+
+
+/* ============================================================
+   21. CELULAR E WEBVIEW
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        overscroll-behavior:
+            none;
+    }
+
+
+    .topo {
+        display:
+            none;
+    }
+
+
+    .map-container {
+        padding:
+            0;
+
+        width:
+            100%;
+
+        height:
+            100%;
+    }
+
+
+    #map {
+        width:
+            100%;
+
+        height:
+            100%;
+
+        border-radius:
+            0;
+
+        box-shadow:
+            none;
+    }
+
+
+    .controles-mapa {
+        top:
+            calc(12px + env(safe-area-inset-top));
+
+        left:
+            8px;
+
+        width:
+            calc(100% - 68px);
+
+        gap:
+            6px;
+    }
+
+
+    .barra-pesquisa {
+        height:
+            39px;
+    }
+
+
+    #pesquisaInput {
+        font-size:
+            12px;
+    }
+
+
+    #btnPesquisaLocal {
+        width:
+            43px;
+
+        padding:
+            0;
+    }
+
+
+    .texto-buscar {
+        display:
+            none;
+    }
+
+
+    .icone-buscar {
+        display:
+            inline-block;
+    }
+
+
+    .seletores-regiao {
+        gap:
+            5px;
+    }
+
+
+    .campo-regiao {
+        height:
+            37px;
+    }
+
+
+    #selectEstado,
+    #selectCidade {
+        font-size:
+            11px;
+
+        padding-left:
+            35px;
+
+        padding-right:
+            28px;
+    }
+
+
+    .campo-regiao > i {
+        left:
+            12px;
+
+        font-size:
+            12px;
+    }
+
+
+    .campo-regiao::after {
+        right:
+            10px;
+    }
+
+
+    .menu-lateral {
+        top:
+            calc(12px + env(safe-area-inset-top));
+
+        right:
+            6px;
+
+        transform:
+            none;
+
+        width:
+            48px;
+    }
+
+
+    .menu-botao {
+        width:
+            39px;
+
+        height:
+            39px;
+    }
+
+
+    .leaflet-control-zoom {
+        margin-top:
+            135px !important;
+    }
+
+}
+
+
+/* ============================================================
+   22. TELAS PEQUENAS
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+    .seletores-regiao {
+        flex-direction:
+            column;
+    }
+
+
+    .controles-mapa {
+        width:
+            calc(100% - 62px);
+    }
+
+}

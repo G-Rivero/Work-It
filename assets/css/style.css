@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #E4E7F6;
+    color: #2a2a2a;
+    min-height: 60vh;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.boasVindas {
+    color: #FFFEF9;
+    height: 200px;
+    width: 1200px;
+    background-color: #623FAB;
+    margin: 30px;
+    border-radius: 20px;
+    padding: 30px 40px;
+}
+
+.linkLogin {
+    padding: 30px 0px;
+}
+.linkLogin a {
+    color: #E4E7F6;
+    transition: all 0.5s ease;
+}
+.linkLogin a:hover{
+    padding: 5px;
+    transform: translateY(-3px);
+    color: #FFFEF9;
+}
+
+.cadastro {
+    background-color: #FFFEF9;
+    height: 350px;
+    width: 1200px;
+    padding: 100px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.formularioCadastro {
+    display: grid;
+    align-items: center;
+    
+}
+
+input {
+    margin-top: 25px;
+    padding: 10px ;
+}
+
+.inputEmail {
+    width: 800px;
+}
+
+.inputNasc {
+    width: 200px;
+}
+
+label {
+    position: absolute;
+}
+
+.linha {
+    display: flex;
+    gap: 10px;
+}
+
+.btnCadastrar {
+    position: fixed;
+    margin-top: 350px;
+    background-color: #623FAB;
+    color: #E4E7F6;
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    width: 300px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.btnCadastrar a {
+    text-decoration: none;
+    color: #E4E7F6;
+}
+
+.btnCadastrar:hover{
+    padding: 22px;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px #613faba0;
+    color: #FFFEF9;
+}
+
+.btnCadastro:active {
+    transform: translateY(0);
+}
+
+.login {
+    background-color: #FFFEF9;
+    height: 200px;
+    width: 1200px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.formularioLogin {
+    display: grid;
+    align-items: center;
+}
+
+.btnLogar {
+    position: fixed;
+    margin-top: 480px;
+    background-color: #623FAB;
+    color: #E4E7F6;
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    width: 300px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.btnLogar:hover{
+    padding: 22px;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px #613faba0;
+    color: #FFFEF9;
+}

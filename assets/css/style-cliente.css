@@ -1,0 +1,1135 @@
+/* ============================================================
+   1. VARIÁVEIS DE CORES DO PROJETO
+   ============================================================ */
+
+/* Define as principais cores utilizadas na página.
+   Isso facilita alterar a identidade visual depois sem
+   precisar procurar cada cor individualmente no CSS. */
+
+:root {
+
+    /* Cor de fundo geral da página */
+    --fundo-pagina: #eef0ff;
+
+    /* Tons de roxo utilizados nos controles */
+    --roxo-claro: #b6a3db;
+    --roxo-medio: #9f84d8;
+    --roxo-principal: #8267bc;
+    --roxo-escuro: #69519f;
+
+    /* Cores básicas */
+    --branco: #ffffff;
+    --texto-principal: #3d374b;
+
+    /* Sombra padrão utilizada nos elementos */
+    --sombra:
+        0 8px 25px rgba(78, 60, 115, 0.16);
+}
+
+
+/* ============================================================
+   2. RESET GERAL
+   ============================================================ */
+
+/* Remove margens e espaçamentos padrões do navegador
+   e faz com que padding e borda façam parte do tamanho
+   total dos elementos. */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* Faz HTML e BODY ocuparem toda a tela. */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ============================================================
+   3. CONFIGURAÇÃO DO BODY
+   ============================================================ */
+
+/* Define a fonte, fundo e comportamento geral da página. */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        var(--fundo-pagina);
+
+    color:
+        var(--texto-principal);
+
+    /* Impede a página inteira de criar rolagem desnecessária */
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   4. CONTAINER PRINCIPAL DA APLICAÇÃO
+   ============================================================ */
+
+/* A classe app ocupa toda a altura da tela.
+   O uso de 100dvh ajuda principalmente em celulares
+   e Android WebView. */
+
+.app {
+
+    width: 100%;
+
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        var(--fundo-pagina);
+}
+
+
+/* ============================================================
+   5. CABEÇALHO
+   ============================================================ */
+
+/* Área superior onde aparece o nome Work It!. */
+
+.topo {
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        0 24px;
+
+    flex-shrink: 0;
+}
+
+
+/* Estilo do título Work It!. */
+
+.topo h1 {
+
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color:
+        var(--texto-principal);
+}
+
+
+/* ============================================================
+   6. ÁREA PRINCIPAL DO MAPA
+   ============================================================ */
+
+/* Container que segura o mapa, os controles e o menu lateral. */
+
+.map-container {
+
+    position: relative;
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding:
+        0
+        70px
+        18px
+        20px;
+}
+
+
+/* ============================================================
+   7. MAPA LEAFLET
+   ============================================================ */
+
+/* Faz o mapa ocupar todo o espaço restante da tela. */
+
+#map {
+
+    width: 100%;
+
+    height: 100%;
+
+    /* Arredondamento das bordas do mapa */
+    border-radius: 25px;
+
+    /* Evita que o conteúdo do mapa saia das bordas */
+    overflow: hidden;
+
+    /* Sombra ao redor do mapa */
+    box-shadow:
+        var(--sombra);
+
+    /* Cor exibida enquanto o mapa ainda está carregando */
+    background:
+        #dde1f3;
+}
+
+
+/* ============================================================
+   8. CONTAINER DOS CONTROLES DO MAPA
+   ============================================================ */
+
+/* Este container segura:
+   - barra de pesquisa
+   - select do estado
+   - select da cidade
+*/
+
+.controles-mapa {
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 38px;
+
+    z-index: 1000;
+
+    width:
+        min(
+            560px,
+            calc(100% - 150px)
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    /* Espaço entre a barra de pesquisa
+       e os selects de Estado/Cidade */
+    gap: 16px;
+}
+
+
+/* ============================================================
+   9. BARRA DE PESQUISA
+   ============================================================ */
+
+/* Container completo da pesquisa. */
+
+.barra-pesquisa {
+
+    width: 100%;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    /* Deixa a barra arredondada */
+    border-radius: 24px;
+
+    /* Evita que botão ou input ultrapassem as bordas */
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b6a3db 0%,
+            #a58bd8 100%
+        );
+
+    box-shadow:
+        0 6px 18px rgba(82, 63, 120, 0.18);
+
+    /* Efeito de transparência e desfoque */
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        box-shadow 0.2s ease;
+}
+
+
+/* Quando o usuário clicar no input,
+   adiciona destaque ao redor da barra. */
+
+.barra-pesquisa:focus-within {
+
+    box-shadow:
+        0 0 0 3px rgba(182, 163, 219, 0.35),
+        0 8px 22px rgba(82, 63, 120, 0.22);
+}
+
+
+/* ============================================================
+   10. ÍCONE DE PESQUISA
+   ============================================================ */
+
+/* Ícone de lupa que aparece antes do campo de texto. */
+
+.icone-pesquisa {
+
+    margin-left: 17px;
+
+    color:
+        var(--branco);
+
+    font-size: 14px;
+
+    opacity: 0.95;
+}
+
+
+/* ============================================================
+   11. INPUT DA PESQUISA
+   ============================================================ */
+
+/* Campo onde o usuário digita o local ou região. */
+
+#pesquisaInput {
+
+    flex: 1;
+
+    min-width: 0;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    padding:
+        0 16px;
+
+    background:
+        transparent;
+
+    color:
+        var(--branco);
+
+    font-size: 14px;
+
+    font-weight: 400;
+}
+
+
+/* Cor do texto de exemplo do input. */
+
+#pesquisaInput::placeholder {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.86
+        );
+}
+
+
+/* ============================================================
+   12. BOTÃO DE PESQUISA
+   ============================================================ */
+
+/* Botão que executa a pesquisa no mapa. */
+
+#btnPesquisaLocal {
+
+    height: 100%;
+
+    border: none;
+
+    padding:
+        0 24px;
+
+    background:
+        var(--roxo-principal);
+
+    color:
+        var(--branco);
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+/* Cor do botão quando o mouse passa por cima. */
+
+#btnPesquisaLocal:hover {
+
+    background:
+        var(--roxo-escuro);
+}
+
+
+/* Pequena animação ao clicar. */
+
+#btnPesquisaLocal:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+/* No desktop o ícone de seta fica escondido,
+   pois aparece o texto "Buscar". */
+
+.icone-buscar {
+
+    display: none;
+}
+
+
+/* ============================================================
+   13. CONTAINER DOS SELECTS
+   ============================================================ */
+
+/* Coloca Estado e Cidade lado a lado. */
+
+.seletores-regiao {
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 10px;
+}
+
+
+/* ============================================================
+   14. CAMPO DE REGIÃO
+   ============================================================ */
+
+/* Cada select fica dentro de um container próprio. */
+
+.campo-regiao {
+
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background:
+        var(--roxo-claro);
+
+    box-shadow:
+        0 5px 16px rgba(79, 62, 115, 0.16);
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Altera levemente a cor quando o mouse passa por cima. */
+
+.campo-regiao:hover {
+
+    background:
+        var(--roxo-medio);
+}
+
+
+/* Aplica destaque quando o select estiver selecionado. */
+
+.campo-regiao:focus-within {
+
+    background:
+        var(--roxo-principal);
+
+    box-shadow:
+        0 0 0 3px rgba(182, 163, 219, 0.4);
+}
+
+
+/* ============================================================
+   15. ÍCONES DOS SELECTS
+   ============================================================ */
+
+/* Posiciona o ícone dentro do campo
+   antes do texto do select. */
+
+.campo-regiao > i {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        var(--branco);
+
+    font-size: 14px;
+
+    /* Impede o ícone de bloquear o clique no select */
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* ============================================================
+   16. SELECT DE ESTADO E CIDADE
+   ============================================================ */
+
+/* Estilo visual dos dois selects. */
+
+#selectEstado,
+#selectCidade {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    padding:
+        0
+        40px
+        0
+        42px;
+
+    background:
+        transparent;
+
+    color:
+        var(--branco);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    /* Remove a seta padrão do navegador */
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    -moz-appearance: none;
+}
+
+
+/* ============================================================
+   17. SETA PERSONALIZADA DOS SELECTS
+   ============================================================ */
+
+/* Cria uma seta branca no lado direito dos selects. */
+
+.campo-regiao::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform:
+        translateY(-25%);
+
+    border-left:
+        5px solid transparent;
+
+    border-right:
+        5px solid transparent;
+
+    border-top:
+        6px solid var(--branco);
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   18. OPÇÕES DOS SELECTS
+   ============================================================ */
+
+/* Quando o menu do select abre,
+   as opções ficam com fundo branco. */
+
+#selectEstado option,
+#selectCidade option {
+
+    background:
+        var(--branco);
+
+    color:
+        var(--texto-principal);
+}
+
+
+/* ============================================================
+   19. MENU LATERAL
+   ============================================================ */
+
+/* Menu roxo localizado no lado direito da tela. */
+
+.menu-lateral {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 10px;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 1100;
+
+    width: 52px;
+
+    padding:
+        6px 5px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border-radius: 28px;
+
+    background:
+        var(--roxo-medio);
+
+    box-shadow:
+        var(--sombra);
+}
+
+
+/* ============================================================
+   20. BOTÕES DO MENU LATERAL
+   ============================================================ */
+
+/* Estiliza os botões de início, pesquisa e perfil. */
+
+.menu-botao {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        transparent;
+
+    color:
+        var(--branco);
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+/* Fundo aplicado ao botão ativo
+   ou quando o mouse passa por cima. */
+
+.menu-botao:hover,
+.menu-botao.ativo {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.18
+        );
+}
+
+
+/* Pequeno efeito ao clicar. */
+
+.menu-botao:active {
+
+    transform:
+        scale(0.9);
+}
+
+
+/* ============================================================
+   21. CONTROLE DE ZOOM DO LEAFLET
+   ============================================================ */
+
+/* Remove o estilo padrão pesado do Leaflet
+   e combina o controle com a identidade do projeto. */
+
+.leaflet-control-zoom {
+
+    border:
+        none !important;
+
+    border-radius:
+        14px !important;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 5px 16px rgba(79, 62, 115, 0.20) !important;
+}
+
+
+/* Botões + e - do mapa. */
+
+.leaflet-control-zoom a {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.94
+        ) !important;
+
+    color:
+        var(--roxo-principal) !important;
+
+    border:
+        none !important;
+}
+
+
+/* ============================================================
+   22. POPUPS DO LEAFLET
+   ============================================================ */
+
+/* Caixa externa do popup. */
+
+.leaflet-popup-content-wrapper {
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0 8px 25px rgba(60, 45, 92, 0.20);
+}
+
+
+/* Conteúdo interno do popup. */
+
+.leaflet-popup-content {
+
+    min-width:
+        210px;
+
+    margin:
+        16px 18px;
+
+    color:
+        var(--texto-principal);
+}
+
+
+/* Títulos dos popups. */
+
+.popup-profissional h3,
+.popup-usuario h3 {
+
+    margin:
+        0
+        0
+        9px;
+
+    font-size:
+        17px;
+
+    font-weight:
+        600;
+
+    color:
+        var(--roxo-principal);
+}
+
+
+/* Textos dentro dos popups. */
+
+.popup-profissional p,
+.popup-usuario p {
+
+    margin:
+        6px 0;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.45;
+}
+
+
+/* ============================================================
+   23. TABLETS
+   ============================================================ */
+
+/* Ajustes para telas menores que 900px. */
+
+@media (max-width: 900px) {
+
+    /* Diminui a altura do cabeçalho */
+    .topo {
+
+        height:
+            58px;
+    }
+
+
+    /* Diminui o título */
+    .topo h1 {
+
+        font-size:
+            23px;
+    }
+
+
+    /* Ajusta o espaço ao redor do mapa */
+    .map-container {
+
+        padding:
+            0
+            65px
+            12px
+            12px;
+    }
+
+
+    /* Reposiciona os controles */
+    .controles-mapa {
+
+        top:
+            15px;
+
+        left:
+            26px;
+
+        width:
+            calc(100% - 105px);
+
+        /* Mantém espaço entre pesquisa e selects */
+        gap:
+            14px;
+    }
+
+
+    /* Aproxima o menu da lateral */
+    .menu-lateral {
+
+        right:
+            7px;
+    }
+
+}
+
+
+/* ============================================================
+   24. CELULAR E ANDROID WEBVIEW
+   ============================================================ */
+
+/* Layout específico para telas de até 600px. */
+
+@media (max-width: 600px) {
+
+    /* Evita efeitos de rolagem desnecessários */
+    body {
+
+        overscroll-behavior:
+            none;
+    }
+
+
+    /* No celular o cabeçalho é removido
+       para dar mais espaço ao mapa */
+    .topo {
+
+        display:
+            none;
+    }
+
+
+    /* O mapa passa a ocupar toda a tela */
+    .map-container {
+
+        padding:
+            0;
+
+        width:
+            100%;
+
+        height:
+            100%;
+    }
+
+
+    /* Remove arredondamento no modo mobile */
+    #map {
+
+        width:
+            100%;
+
+        height:
+            100%;
+
+        border-radius:
+            0;
+
+        box-shadow:
+            none;
+    }
+
+
+    /* Posiciona pesquisa e selects no topo */
+    .controles-mapa {
+
+        top:
+            calc(
+                12px +
+                env(safe-area-inset-top)
+            );
+
+        left:
+            8px;
+
+        width:
+            calc(100% - 68px);
+
+        /* Espaçamento entre pesquisa
+           e Estado/Cidade no celular */
+        gap:
+            12px;
+    }
+
+
+    /* Reduz a altura da barra */
+    .barra-pesquisa {
+
+        height:
+            39px;
+    }
+
+
+    /* Reduz o texto */
+    #pesquisaInput {
+
+        font-size:
+            12px;
+    }
+
+
+    /* Botão vira praticamente apenas um ícone */
+    #btnPesquisaLocal {
+
+        width:
+            43px;
+
+        padding:
+            0;
+    }
+
+
+    /* Esconde a palavra Buscar */
+    .texto-buscar {
+
+        display:
+            none;
+    }
+
+
+    /* Mostra somente o ícone */
+    .icone-buscar {
+
+        display:
+            inline-block;
+    }
+
+
+    /* Aproxima Estado e Cidade entre si */
+    .seletores-regiao {
+
+        gap:
+            6px;
+    }
+
+
+    /* Reduz a altura dos selects */
+    .campo-regiao {
+
+        height:
+            37px;
+
+        border-radius:
+            19px;
+    }
+
+
+    /* Reduz a fonte dos selects */
+    #selectEstado,
+    #selectCidade {
+
+        font-size:
+            11px;
+
+        padding:
+            0
+            28px
+            0
+            35px;
+    }
+
+
+    /* Reposiciona os ícones */
+    .campo-regiao > i {
+
+        left:
+            12px;
+
+        font-size:
+            12px;
+    }
+
+
+    /* Reposiciona a seta */
+    .campo-regiao::after {
+
+        right:
+            10px;
+    }
+
+
+    /* Menu lateral vai para o canto superior direito */
+    .menu-lateral {
+
+        top:
+            calc(
+                12px +
+                env(safe-area-inset-top)
+            );
+
+        right:
+            6px;
+
+        transform:
+            none;
+
+        width:
+            48px;
+    }
+
+
+    /* Reduz os botões */
+    .menu-botao {
+
+        width:
+            39px;
+
+        height:
+            39px;
+    }
+
+
+    /* Move o zoom para baixo
+       para não ficar atrás da pesquisa */
+    .leaflet-control-zoom {
+
+        margin-top:
+            140px !important;
+    }
+
+}
+
+
+/* ============================================================
+   25. CELULARES MUITO PEQUENOS
+   ============================================================ */
+
+/* Em telas muito estreitas, Estado e Cidade
+   ficam um embaixo do outro. */
+
+@media (max-width: 360px) {
+
+    .seletores-regiao {
+
+        flex-direction:
+            column;
+
+        gap:
+            6px;
+    }
+
+
+    .controles-mapa {
+   position: absolute;
+
+    top: 18px;
+    left: 38px;
+
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    width:
+        min(
+            620px,
+            calc(100% - 150px)
+        );
+    }
+
+}
