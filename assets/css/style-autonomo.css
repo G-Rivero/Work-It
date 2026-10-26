@@ -3,15 +3,17 @@
    ============================================================ */
 
 :root {
-    --fundo-pagina: #eef0ff;
+    --fundo-pagina: #E4E7F6;
 
+    /* Tons de roxo utilizados nos controles */
     --roxo-claro: #b6a3db;
     --roxo-medio: #9f84d8;
-    --roxo-principal: #8267bc;
+    --roxo-principal: #623fab;
     --roxo-escuro: #69519f;
 
-    --texto-principal: #3d374b;
-    --branco: #ffffff;
+    /* Cores básicas */
+    --branco: #FFFEF9;
+    --texto-principal: #2a2a2a;
 
     --borda-suave: rgba(108, 82, 157, 0.18);
 

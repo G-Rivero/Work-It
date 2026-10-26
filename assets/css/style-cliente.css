@@ -9,17 +9,17 @@
 :root {
 
     /* Cor de fundo geral da página */
-    --fundo-pagina: #eef0ff;
+    --fundo-pagina: #E4E7F6;
 
     /* Tons de roxo utilizados nos controles */
     --roxo-claro: #b6a3db;
     --roxo-medio: #9f84d8;
-    --roxo-principal: #8267bc;
+    --roxo-principal: #623fab;
     --roxo-escuro: #69519f;
 
     /* Cores básicas */
-    --branco: #ffffff;
-    --texto-principal: #3d374b;
+    --branco: #FFFEF9;
+    --texto-principal: #2a2a2a;
 
     /* Sombra padrão utilizada nos elementos */
     --sombra:
@@ -137,7 +137,7 @@ body {
 
 
 /* ============================================================
-   6. ÁREA PRINCIPAL DO MAPA
+   6. ÁREA PRINCIPAL MAPA e PERFIL
    ============================================================ */
 
 /* Container que segura o mapa, os controles e o menu lateral. */
@@ -155,6 +155,86 @@ body {
         70px
         18px
         20px;
+}
+
+.perfil-container {
+    width: 100%;
+    margin-top: 70px;
+    height: 100%;
+
+    /* Arredondamento das bordas do mapa */
+    border-radius: 25px;
+
+    /* Evita que o conteúdo do mapa saia das bordas */
+    overflow: hidden;
+
+    /* Sombra ao redor do mapa */
+    box-shadow:
+        var(--sombra);
+
+    /* Cor exibida enquanto o mapa ainda está carregando */
+    background:
+        var(--branco);
+}
+
+.pfp {
+    position: absolute;
+    top: -30px;
+    left: 75px;
+
+    width: 290px;
+    height: 290px;
+
+    background-color: var(--branco);
+    border: 15px solid var(--fundo-pagina);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+.pfp img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.sidebar {
+    margin-left: 55px;
+    margin-top: 200px;
+    padding: 20px;
+}
+
+.sidebar h4 {
+    color: #2a2a2a85;
+    margin-top: 5px;
+}
+
+.botao-seguir {
+    margin-top: 40px;
+    position: fixed;
+    background-color: var(--roxo-principal);
+    color: var(--fundo-pagina);
+    padding: 20px;
+    border-radius: 50px;
+    border: none;
+    width: 200px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.botao-seguir:hover{
+    padding: 22px;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px #613faba0;
+    color: #FFFEF9;
+}
+
+.btnCadastro:active {
+    transform: translateY(0);
 }
 
 
