@@ -233,10 +233,125 @@ body {
     color: #FFFEF9;
 }
 
-.btnCadastro:active {
+.botao-seguir:active {
     transform: translateY(0);
 }
 
+.principal {
+    width: 45%; /* Ajustado levemente para acomodar a largura do efeito 3D */
+    margin-left: 650px;
+    margin-top: -200px;
+    text-align: center;
+}
+
+.descricao {
+    background-color: #E2E2E2; /* Cor cinza claro aproximada do Figma */
+    padding: 30px 40px;
+    border-radius: 12px;
+    position: relative;
+}
+
+/* Criando as aspas estilizadas do Figma com ::before e ::after */
+.box-sobre::before {
+    content: "“";
+    position: absolute;
+    top: -20px;
+    left: 15px;
+    font-size: 5rem;
+    color: var(--roxo-principal);
+    font-family: serif;
+}
+
+.box-sobre::after {
+    content: "”";
+    position: absolute;
+    bottom: -60px;
+    right: 15px;
+    font-size: 5rem;
+    color: var(--roxo-principal);
+    font-family: serif;
+}
+
+/* --- LINK DO PORTFÓLIO --- */
+.link-portfolio {
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #9C8BBF; /* Cor roxa clara idêntica ao texto do Figma */
+    text-decoration: none;
+    border-bottom: 2px solid #9C8BBF; /* Linha customizada embaixo */
+    padding-bottom: 5px;
+}
+
+/* --- SEÇÃO DOS PROJETOS (EFEITO FIGMA 3D) --- */
+.projetos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25rem; /* Ajustado para conter perfeitamente o efeito */
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    overflow: visible;
+    margin-top: 20px;
+}
+
+.projeto-foco {
+    position: absolute; /* Voltamos ao absoluto para permitir a sobreposição perfeita */
+    width: 25rem;
+    height: 15rem;
+    border-radius: 2rem; /* Ajustado para combinar com o Figma */
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, z-index 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Distribuição espacial dos cards simulando o Figma */
+.card-esquerda {
+    transform: translateX(-12rem) scale(0.85) translateZ(-50px);
+    z-index: 1;
+}
+
+.card-centro {
+    transform: translateX(0) scale(1) translateZ(0);
+    z-index: 3; /* Fica por cima de todos */
+}
+
+.card-direita {
+    transform: translateX(12rem) scale(0.85) translateZ(-50px);
+    z-index: 1;
+}
+
+/* Container interno da imagem */
+.img-projeto {
+    display: flex;
+    width: 100%; 
+    height: 100%;
+}
+
+.img-projeto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 4px solid var(--roxo-claro); 
+    border-radius: 2rem;
+}
+
+/* --- EFEITO AO PASSAR O MOUSE (HOVER) --- */
+/* Quando passar o mouse em qualquer card, ele vai para a frente de todos e ganha destaque */
+.projeto-foco:hover {
+    transform: scale(1.05) translateZ(100px) ;
+    box-shadow: 0 20px 40px var(--roxo-medio);
+    z-index: 999 !important;
+}
+
+
+/* .principal { width: 40%; margin-left: 700px; margin-top: -200px; text-align: center;}.descricao { background-color: var(--fundo-pagina); padding: 20px; border-radius: 5px;}.projetos { display: flex; justify-content: center; align-items: center; gap: 20px; width: 100%; max-width: 80rem; height: 36rem; perspective: 1000px; -webkit-perspective: 1000px; overflow: visible; } .projeto-foco { width: 25rem; height: 15rem; border-radius: 3rem; overflow: hidden; cursor: pointer; z-index: 2; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease; transform: scale(var(--sx, 1), var(--sy, 1)); box-shadow: 0 6px 18px rgba(0,0,0,0.08); flex-shrink: 0; } .img-projeto { display: flex; width: 100%; height: 100%; } .img-projeto img { width: 100%; height: 100%; object-fit: cover; border-radius: 3rem; display: block; border: 3px solid var(--roxo-claro); } .projeto-foco:hover { transform: scale(calc(var(--sx, 1) * 1.0), calc(var(--sy, 1) * 1.0)) translateZ(120px); box-shadow: 0 10px 15px var(--roxo-medio); z-index: 999;} */
 
 /* ============================================================
    7. MAPA LEAFLET
