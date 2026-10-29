@@ -214,10 +214,10 @@ body {
 }
 
 .botao-seguir {
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 200px;
     gap: 75px;
     background-color: var(--roxo-principal);
     color: var(--fundo-pagina);
@@ -261,26 +261,41 @@ body {
     transform: translateY(0);
 }
 
+.divisao-perfil {
+    background-color: var(--fundo-pagina);
+    width: 2px;
+    height: 60%;
+    position: fixed;
+    border: none;
+    top: 250px;
+    left: 520px;
+}
+
 .principal {
     width: 45%;
-    margin-left: 650px;
-    margin-top: -200px;
+    margin-left: 750px;
+    margin-top: -300px;
     text-align: center;
+    position: fixed;
 }
 
 .detalhes-pfp {
     position: relative;
-    margin-top: 30px;
-    gap: 10px;
+    margin-top: 40px;
     align-items: center;
-    display: flex;
 }
 
 .avaliacoes{
-    
+    display: flex;
+    align-items: center; 
+    gap: 10px;
 }
 
-
+.servicos {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+}
 
 .detalhes-icone {
     width: 42px;
