@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work It! - Perfil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style-autonomo.css">
+</head>
+<body>
+    <div class="app">
+        <header class="topo">
+
+            <h1>
+                Work It!
+            </h1>
+
+        </header> 
+        <main class="map-container">
+
+
+            <!-- =================================================
+                 MAIN
+                 ================================================= -->
+
+            <main class="perfil-container">
+                <div class="pfp">
+                    <img src="../assets/img/tux_goku.png" alt="Foto de Perfil">
+                </div>
+                <div class="sidebar">
+                    <h1>Super Ubuntu</h1>
+                    <h4>Técnico de T.I.</h4>
+
+                    <div class="detalhes-pfp">
+
+                        <div class="detalhes-pfp avaliacoes">
+                            <div class="detalhes-icone">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="detalhes-texto">
+                                <h3>5.0</h3>
+                                <p>Avaliações</p>
+                            </div>
+                            
+                        </div>
+                        <div class="detalhes-pfp servicos">
+                            <div class="detalhes-icone">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div class="detalhes-texto">
+                                <h3>50</h3>
+                                <p>Serviços Realizados</p>
+                            </div>
+                        </div>
+
+                        <div class="detalhes-pfp anos">
+                            <div class="detalhes-icone">
+                                <i class="fa-solid fa-calendar"></i>
+                            </div>
+                            <div class="detalhes-texto">
+                                <h3>1</h3>
+                                <p>Ano(s) usando Work It!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="botao-seguir" type="button">
+                        <div class="editar-icone">
+                            <i class="fa-solid fa-pen"></i>
+                        </div>
+                        <h3>Editar</h3>
+                    </button>
+                    <hr class="divisao-perfil">
+                </div>
+
+                
+
+                <div class="principal">
+                    <div class="descricao box-sobre">
+                       <p>Olá. Me chamo super Tux, sou um profissional na área da Tecnologia da Informação (T.I).
+                       O foco dos meu serviços são criação de banco de dados, manipulação dados e um pouco de infraestrutura. 
+                       Tenho experiência há um pouco mais de um ano e sou apaixonado pela área. Sou MEI e estou disposto a prestar serviço!</p>
+                    </div>
+                    
+                    <a href="#" class="link-portfolio">Acessar meu Portfólio</a>
+                    
+                    <div class="projetos">
+                       <div class="projeto-foco card-esquerda">
+                           <div class="img-projeto"><img src="https://www.geekhunter.com/pt/blog/wp-content/uploads/2024/09/sammyayot254-vIQDv6tUHYk-unsplash-scaled.jpg" alt=""></div>
+                       </div>
+                       <div class="projeto-foco card-centro">
+                           <div class="img-projeto"><img src="https://files.tecnoblog.net/wp-content/uploads/2023/10/equipamento-datacenter-sky.jpg" alt=""></div>
+                       </div>
+                       <div class="projeto-foco card-direita">
+                           <div class="img-projeto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc7CWcCS0VFvyk-_awVF1EOiOBEXZacmc3CW2ETbsCngaGLKuXiUZB9EA&s=10" alt=""></div>
+                       </div>
+                    </div>
+               </div>
+               
+
+            <!-- =================================================
+                 MENU LATERAL
+                 ================================================= -->
+
+            <nav class="menu-lateral">
+
+                <a href="mapa-autonomo.html">
+                <button
+                    class="menu-botao"
+                    type="button"
+                    aria-label="Página inicial"
+                >
+
+                    <i class="fa-solid fa-house"></i>
+                
+                </button>
+                </a>
+
+                <button
+                    class="menu-botao"
+                    type="button"
+                    aria-label="Pesquisar"
+                >
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <button
+                    class="menu-botao ativo"
+                    type="button"
+                    aria-label="Perfil"
+                >
+
+                    <i class="fa-regular fa-circle-user"></i>
+
+                </button>
+
+
+            </nav>
+
+
+        </main>
+    </div>
+
+        <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <script
+        src="../JavaScript/mapa-cliente.js"
+    ></script>
+</body>
+</html>
