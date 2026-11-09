@@ -1058,34 +1058,385 @@ body {
             10px;
     }
 
-
     .menu-lateral {
-        top:
-            calc(12px + env(safe-area-inset-top));
+        position: fixed;
+    
+        top: calc(12px + env(safe-area-inset-top));
+        right: 6px;
+    
+        transform: none;
+    
 
-        right:
-            6px;
-
-        transform:
-            none;
-
-        width:
-            48px;
+        width: 48px;
+        height: 135px;
+    
+    
+    
+    
     }
-
-
+    
     .menu-botao {
-        width:
-            39px;
-
-        height:
-            39px;
+       
+        width: 39px;
+        height: 39px;
+    
+        font-size: 18px;
     }
-
 
     .leaflet-control-zoom {
         margin-top:
             135px !important;
+    }
+
+    .perfil-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        width: calc(100% - 24px);
+        min-height: 0;
+        height: 716px;
+
+        margin: 90px 12px 18px;
+        padding: 88px 28px 20px;
+
+        border-radius: 15px;
+        overflow: visible;
+
+    }
+
+
+    /* FOTO DE PERFIL */
+
+    .pfp {
+        top: -48px;
+        left: 28px;
+
+        width: 138px;
+        height: 138px;
+
+        transform: none;
+
+        border: 7px solid var(--fundo-pagina);
+    }
+
+
+    /* SIDEBAR */
+
+    .sidebar {
+        display: contents;
+    }
+
+    .sidebar > h1 {
+        order: 1;
+
+        margin: 0;
+        padding: 0;
+
+        text-align: left;
+
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .sidebar > h4 {
+        order: 2;
+
+        margin: 0;
+
+        text-align: left;
+
+        font-size: 10px;
+        font-weight: normal;
+
+        color: #999;
+    }
+
+
+    /* INFORMAÇÕES DO PERFIL */
+
+    .sidebar > .detalhes-pfp {
+        order: 3;
+
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        align-items: start;
+
+        width: 100%;
+
+        gap: 5px;
+
+        margin: 25px 0 22px;
+    }
+
+    .detalhes-pfp.avaliacoes,
+    .detalhes-pfp.servicos,
+    .detalhes-pfp.anos {
+        display: flex;
+
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 5px;
+
+        min-width: 0;
+        margin: 0;
+
+        text-align: center;
+    }
+
+    .detalhes-icone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 25px;
+        height: 25px;
+
+        font-size: 21px;
+
+        color: var(--roxo-principal);
+    }
+
+    .detalhes-texto {
+        text-align: center;
+        width: 75px;
+    }
+
+    .detalhes-texto h3 {
+        margin: 0;
+
+        font-size: 13px;
+        font-weight: 600;
+
+        color: var(--roxo-principal);
+    }
+
+    .detalhes-texto p {
+        margin: 2px 0 0;
+
+        font-size: 8px;
+        line-height: 1.3;
+
+        color: #999;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* DIVISÃO */
+
+    .divisao-perfil {
+        display: none;
+    }
+
+
+    /* ÁREA PRINCIPAL */
+
+    .principal {
+        order: 4;
+
+        position: relative;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        text-align: center;
+        
+    }
+
+
+    /* SOBRE */
+
+    .descricao {
+        width: 100%;
+
+        padding: 20px 12px;
+
+        border-radius: 4px;
+
+        background: #d9d9d9;
+
+        text-align: left;
+    }
+
+    .descricao p {
+        margin: 0;
+
+        font-size: 9px;
+        line-height: 1.4;
+
+        color: #444;
+    }
+
+    .box-sobre::before {
+        top: -15px;
+        left: -10px;
+
+        font-size: 35px;
+
+        color: var(--roxo-principal);
+    }
+
+    .box-sobre::after {
+        bottom: -30px;
+        right: -8px;
+
+        font-size: 35px;
+
+        color: var(--roxo-principal);
+    }
+
+
+    /* PORTFÓLIO */
+
+    .link-portfolio {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+
+    /* PROJETOS */
+
+    .projetos {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 250px;
+        height: 145px;
+
+        left: 12.5%;
+
+        margin-top: 5px;
+        margin-bottom: 10px;
+
+        perspective: 800px;
+        overflow: visible;
+    }
+
+    .projeto-foco {
+        position: absolute;
+
+        width: 75%;
+        height: 115px;
+
+        border-radius: 13px;
+
+        overflow: hidden;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.16);
+    }
+
+    .card-esquerda {
+        margin: 0;
+
+        transform: translateX(-48%) scale(0.78);
+
+        z-index: 1;
+    }
+
+    .card-centro {
+        margin: 0;
+
+        transform: translateX(0) scale(1);
+
+        z-index: 3;
+    }
+
+    .card-direita {
+        margin: 0;
+
+        transform: translateX(48%) scale(0.78);
+
+        z-index: 1;
+    }
+
+    .img-projeto {
+        width: 100%;
+        height: 100%;
+    }
+
+    .img-projeto img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        border: 2px solid var(--roxo-claro);
+        border-radius: 13px;
+    }
+
+
+
+    /* BOTÃO EDITAR */
+
+    .botao-seguir {
+        order: 5;
+
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: 100%;
+        height: 51px;
+
+        margin: 12px 0 0;
+        padding: 7px 10px;
+
+        gap: 0;
+
+        border-radius: 40px;
+
+        background: var(--roxo-principal);
+        color: var(--fundo-pagina);
+
+        box-shadow: none;
+    }
+
+    .botao-seguir h3 {
+        flex: 1;
+
+        margin: 0 42px 0 0;
+
+        text-align: center;
+
+        font-size: 13px;
+        font-weight: normal;
+    }
+
+    .editar-icone {
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 35px;
+        height: 35px;
+
+        font-size: 15px;
+
+        background: var(--fundo-pagina);
+        color: var(--roxo-principal);
+
+        border-radius: 50%;
+    }
+
+    .botao-seguir:hover {
+        padding: 7px 10px;
+
+        transform: none;
+
+        box-shadow: none;
+        color: var(--fundo-pagina);
     }
 
 }
