@@ -157,6 +157,75 @@ body {
         20px;
 }
 
+.pedido-container {
+    width: 100%;
+    margin-top: 70px;
+    height: 550px;
+    padding: 100px;
+    border-radius: 25px;
+    display: flex;
+    
+    box-shadow:
+        var(--sombra);
+
+    background:
+        var(--branco);
+}
+.formularioPedido {
+    display: grid;
+    align-items: center;
+    
+}
+
+input {
+    margin-top: 25px;
+    padding: 10px ;
+}
+
+#categoria {
+    margin-top: 25px;
+    padding: 10px;
+}
+
+.inputDesc {
+    width: 800px;
+    height: 150px;
+}
+
+.inputContato {
+    width: 400px;
+    padding: 15px;
+}
+
+.btnPedir {
+    position: fixed;
+    margin-top: 330px;
+    background-color: #623FAB;
+    color: #E4E7F6;
+    padding: 20px;
+    border-radius: 20px;
+    right: 850px;
+    border: none;
+    width: 300px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.btnPedir a {
+    text-decoration: none;
+    color: #E4E7F6;
+}
+
+.btnPedir:hover{
+    padding: 22px;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px #613faba0;
+    color: #FFFEF9;
+}
+
+.btnPedir:active {
+    transform: translateY(0);
+}
 .perfil-container {
     width: 100%;
     margin-top: 70px;
@@ -312,13 +381,17 @@ body {
     position: relative;
 }
 
+.informacao-adicional{
+    display: flex;
+    gap: 100px;
+}
+
 .carteira {
     background-color: var(--roxo-principal); 
     color: var(--fundo-pagina);
     padding: 30px 40px;
     width: 300px;
     border-radius: 12px;
-    position: relative;
     border: none;
     left: 565px;
     transition: all 0.5 ease;
@@ -350,7 +423,6 @@ body {
     padding: 30px 40px;
     border-radius: 12px;
     width: 500px;
-    position: relative;
 }
 
 .box-sobre::before {
@@ -855,6 +927,12 @@ body {
         var(--sombra);
 }
 
+.linkSidebar {
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 /* ============================================================
    20. BOTÕES DO MENU LATERAL

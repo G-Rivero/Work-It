@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir Serviço - Work It!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style-cliente.css">
+</head>
+<body>
+        <div class="app">
+        <header class="topo">
+
+            <h1>
+                Work It!
+            </h1>
+
+        </header> 
+        <main class="map-container">
+
+
+            <!-- =================================================
+                 MAIN
+                 ================================================= -->
+
+            <section class="pedido-container">
+                
+ <div class="pedido">
+        <form class="formularioPedido" action="mapa-cliente.html" method="get">
+            <input
+                type="text"
+                class="inputNome"
+                name="nomeCliente"
+                placeholder="Seu nome"
+                required
+            />
+
+            <select name="categoriaPedido" id="categoria" required>
+                <option value="" disabled selected hidden>Categoria do Pedido</option>
+                <option value="beleza">Beleza/Bem-Estar</option>
+                <option value="educacao">Educação/Treinamento</option>
+                <option value="tecnicos">Manutenção</option>
+                <option value="criativo">Serviços Criativos/Digitais</option>
+                <option value="domestico">Serviços Domésticos</option>
+                <option value="tecnologia">Tecnologia</option>
+                <option value="outro">Outro</option>
+                
+            </select>
+
+            <input 
+                type="text"
+                class="inputDesc"
+                name="descricaoPedido"
+                placeholder="Descrição do pedido"
+                >
+            
+            <input 
+                type="tel"
+                class="inputContato"
+                name="meioComunicacao"
+                placeholder="Meio de Contato"
+                required
+                >
+            <button type="submit" class="btnPedir">
+                Fazer Pedido
+            </button>
+        </form>
+    </div>
+               
+
+           <!-- =================================================
+                 MENU LATERAL
+                 ================================================= -->
+
+            <nav class="menu-lateral">
+
+                <a href="mapa-cliente.html" class="linkSidebar">
+                <button
+                    class="menu-botao"
+                    type="button"
+                    aria-label="Página inicial"
+                >
+
+                    <i class="fa-solid fa-house"></i>
+                
+                </button>
+                </a>
+
+                <a href="pedido-cliente.html" class="linkSidebar">
+                <button
+                    class="menu-botao"
+                    type="button"
+                    aria-label="Pesquisar"
+                >
+
+                    <i class="fa-solid fa-bell-concierge"></i>
+
+                </button></a>
+
+                <a href="perfil-cliente.html" class="linkSidebar">
+                <button
+                    class="menu-botao ativo"
+                    type="button"
+                    aria-label="Perfil"
+                >
+
+                    <i class="fa-regular fa-circle-user"></i>
+
+                </button>
+                </a>
+
+            </nav>
+       
+
+            </section>
+        </main>
+    </div>
+</body>
+</html>

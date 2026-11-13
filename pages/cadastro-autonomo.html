@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work It! - Cadastro</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     
     <div class="boasVindas">
         <h1>Bem Vindo ao Work It!</h1>
-        <h5>Crie sua conta como autônomo já</h5>
+        <h5>Crie sua conta como autônomo</h5>
         <div class="linkLogin">
-            <p>Já tem uma conta? <a href="pages/login.html">Faça login aqui</a></p>
+            <p>Já tem uma conta? <a href="login-autonomo.html">Faça login aqui</a></p>
         </div>
     </div>
     
     <div class="cadastro">
-        <form class="formularioCadastro" action="pages/login.html" method="post">
+        <form class="formularioCadastro" action="cadastro-local-autonomo.html" method="post" style="margin-top: -85px;">
             <input
                 type="text"
                 class="inputNome"
@@ -33,6 +34,7 @@
                     name="data"
                     required
                 />
+
                 <input
                     type="email"
                     class="inputEmail"
@@ -41,6 +43,13 @@
                     required
                 />
             </div>
+            <input
+                type="text"
+                class="inputCPNJ"
+                name="cpfOuCnpj"
+                placeholder="CPF/CNPJ"
+                required
+            />
             <input
                 type="password"
                 class="inputSenha"
@@ -56,7 +65,7 @@
                 required
             />
             <button type="submit" class="btnCadastrar">
-                Criar Conta
+                Próxima Etapa
             </button>
         </form>
     </div>

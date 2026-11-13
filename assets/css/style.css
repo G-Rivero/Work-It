@@ -42,19 +42,23 @@ body {
 
 .cadastro {
     background-color: #FFFEF9;
-    height: 350px;
+    height: 400px;
     width: 1200px;
     padding: 100px;
     border-radius: 10px;
     align-items: center;
     justify-content: center;
-    display: flex;
 }
 
 .formularioCadastro {
     display: grid;
     align-items: center;
-    
+    margin-top: -40px;
+}
+
+.selectCidade {
+    margin-top: 25px;
+    padding: 10px;
 }
 
 input {
@@ -80,8 +84,7 @@ label {
 }
 
 .btnCadastrar {
-    position: fixed;
-    margin-top: 350px;
+    margin-top: 45px;
     background-color: #623FAB;
     color: #E4E7F6;
     padding: 20px;
@@ -104,13 +107,43 @@ label {
     color: #FFFEF9;
 }
 
-.btnCadastro:active {
+.btnCadastrar:active {
     transform: translateY(0);
+}
+
+.btnVoltar {
+    background-color: #b6a3db;
+    color: #E4E7F6;
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    width: 300px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    margin-top: 45px;   
+}
+
+.btnVoltar a {
+    text-decoration: none;
+    color: #E4E7F6;
+}
+
+.btnVoltar:hover{
+    padding: 22px;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px #9f84d8;
+    color: #FFFEF9;
+}
+
+.buttons {
+    margin-top: -75px;
+    display: flex;
+    gap: 100px;
 }
 
 .login {
     background-color: #FFFEF9;
-    height: 200px;
+    height: 300px;
     width: 1200px;
     border-radius: 10px;
     align-items: center;

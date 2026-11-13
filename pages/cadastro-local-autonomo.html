@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work It! - Cadastro</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    
+    <div class="boasVindas">
+        <h1>Informações de Endereço - Cadastro Work It!</h1>
+        <h5>Cadastre sua rua, bairro, cidade e CEP</h5>
+        <div class="linkLogin">
+            <p>Já tem uma conta? <a href="login-autonomo.html">Faça login aqui</a></p>
+        </div>
+    </div>
+    
+    <div class="cadastro">
+        <form class="formularioCadastro" action="pages/login.html" method="post">
+            <input
+                type="text"
+                class="inputRua"
+                name="rua"
+                placeholder="Rua"
+                required
+            />
+            
+            <input
+                type="text"
+                class="inputBairro"
+                name="bairro"
+                placeholder="Bairro"
+                required
+            />
+
+            <div class="linha"></div>
+                <select name="cidade" class="selectCidade" required>
+                    <option value="" disabled selected hidden>Selecione sua Cidade</option>
+                    <option value="caieiras">Caieiras</option>
+                    <option value="cajamar">Cajamar</option>
+                    <option value="francoDaRocha">Franco da Rocha</option>
+                    <option value="mairipora">Mairiporã</option>
+                    <option value="jundiai">Jundiaí</option>
+                </select>
+
+                <input
+                    type="text"
+                    class="inputCEP"
+                    name="cep"
+                    placeholder="CEP"
+                    required
+                />
+            </div>
+
+            <div class="buttons">
+            <a href="cadastro-autonomo.html">
+            <button type="button" class="btnVoltar" >
+                Voltar
+            </button>
+            </a>
+            <button type="submit" class="btnCadastrar" >
+                Criar Conta
+            </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
